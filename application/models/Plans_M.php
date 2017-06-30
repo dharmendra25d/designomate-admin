@@ -66,9 +66,9 @@ Class Plans_M extends CI_Model {
 		if(!empty($info['plan_desc'])) {
 		 $add_data['plan_desc'] =$info['plan_desc'];
 		}
-		if(!empty($info['plan_price'])) {
+	
 		 $add_data['plan_price']=$info['plan_price'];
-		}
+		
 		
 		if(!empty($info['plan_type'])) {
 		 $add_data['plan_type'] = $info['plan_type'];
