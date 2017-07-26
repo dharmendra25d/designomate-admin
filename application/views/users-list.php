@@ -3,7 +3,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>addons</h3>
+                <h3>Users</h3>
               </div>
 
               <div class="title_right">
@@ -22,7 +22,7 @@
 			   <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>addons List</h2>
+                    <h2>Users List</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -49,12 +49,15 @@
                         <thead>
                           <tr class="headings">
                            
-                            <th class="column-title">Addon </th>
-                            <th class="column-title">Description </th>
-                            <th class="column-title">Price </th>
-							<th class="column-title">Addons Integration Charges </th>
-							<th class="column-title">Addon Link</th>
-                            <th class="column-title no-link last"><span class="nobr">Action</span>
+                            <th class="column-title">First Name </th>
+                            <th class="column-title">Last Name </th>
+                            <th class="column-title">Email </th>
+                            <th class="column-title">City</th>
+							<th class="column-title">State</th>
+							<th class="column-title">Country</th>
+							<th class="column-title">Zip Code</th>
+							<th class="column-title">Phone</th>
+                            <!--<th class="column-title no-link last"><span class="nobr">Action</span>-->
                             </th>
                             <th class="bulk-actions" colspan="7">
                               <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
@@ -65,14 +68,17 @@
                         <tbody>
                          
 							<?php
-							foreach($list as $addon) { ?>
+							foreach($list as $plan) { ?>
 							 <tr class="even pointer">
-                            <td class=" "><?php echo $addon->addon_name;?></td>
-							<td class=" "><?php echo $addon->addon_desc;?></td>
-							<td class=" "><?php echo $addon->addon_price;?></td>
-							<td class=" "><?php echo $addon->addon_inte_charges;?></td>
-							<td class=" "><?php echo $addon->addon_link;?></td>
-                            <td class="last"><a href="edit?id=<?php echo $addon->id; ?>">Edit / </a><a href="del?id=<?php echo $addon->id; ?>">Delete</a>
+                            <td class=" "><?php echo $plan->fname;?></td>
+							<td class=" "><?php echo $plan->lname;?></td>
+							<td class=" "><?php echo $plan->email;?></td>
+							<td class=" "><?php echo $plan->city;?></td>
+							<td class=" "><?php echo $plan->state;?></td>
+							<td class=" "><?php echo $plan->country;?></td>
+							<td class=" "><?php echo $plan->zip_code;?></td>
+							<td class=" "><?php echo $plan->phone;?></td>
+                           <!-- <td class="last"><a href="edit?id=<?php echo $plan->id; ?>">Edit / </a><a href="del?id=<?php echo $plan->id; ?>">Delete</a>-->
 							    </tr>
 							<?php }?>
                            

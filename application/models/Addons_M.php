@@ -24,8 +24,16 @@ Class Addons_M extends CI_Model {
 	 $add_data['addon_price']=$info['addon_price'];
 	}
 	
+	if(!empty($info['addon_inte_charges'])) {
+		 $add_data['addon_inte_charges']=$info['addon_inte_charges'];
+		}
+		
 	if(!empty($info['addon_link'])) {
 	 $add_data['addon_link'] = $info['addon_link'];
+	}
+	
+	if(!empty($info['addon_image_link'])) {
+	 $add_data['addon_image_link'] = $info['addon_image_link'];
 	}
 	
 	
@@ -70,6 +78,10 @@ Class Addons_M extends CI_Model {
 		}
 		if(!empty($info['addon_price'])) {
 		 $add_data['addon_price']=$info['addon_price'];
+		}
+		
+		if(!empty($info['addon_inte_charges'])) {
+		 $add_data['addon_inte_charges']=$info['addon_inte_charges'];
 		}
 		
 		if(!empty($info['addon_link'])) {

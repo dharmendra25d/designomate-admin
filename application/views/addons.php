@@ -43,7 +43,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="demo-form2" action="add" method="post" class="form-horizontal form-label-left">
+                    <form id="demo-form2" action="<?php echo base_url();?>/addons/add" method="post" class="form-horizontal form-label-left">
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Addon Name <span class="required">*</span>
@@ -53,10 +53,10 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" name="" for="last-name">Addon description<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" name="" for="last-name">Addon description
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <textarea  id="last-name" required="required" name="addon_desc" class="form-control col-md-7 col-xs-12"></textarea>
+                          <textarea  id="last-name"  name="addon_desc" class="form-control col-md-7 col-xs-12"></textarea>
                         </div>
                       </div>
                       <div class="form-group">
@@ -65,12 +65,25 @@
                           <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="addon_price">
                         </div>
                       </div>
+                  <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Addons Integration Charges</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="addon_inte_charges">
+                        </div>
+                      </div>
                  
 					  
 					   <div class="form-group">
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Addon link</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="addon_link">
+                        </div>
+                      </div>
+					  
+					    <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Addon Image link</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="addon_image_link">
                         </div>
                       </div>
                      
