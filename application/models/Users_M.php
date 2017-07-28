@@ -99,6 +99,36 @@ Class Users_M extends CI_Model {
 		
 	}
 	
+	public function vauth($info) {
+
+	/* $this->db->select('address_id');
+	$query = $this->db->get_where($this->table, array("invoice_id"=>$info['id']));
+	$aid = ($query->row()->address_id); */
+	if($info['email']=='admin@designomate.com') :
+	$this->db->where('email',$info['email']);
+	$this->db->where('password',$info['password']);
+    $query = $this->db->get('dg_users');
+    if ($query->num_rows() > 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+	else:   return false;
+	endif;
+	
+
+	}
+	public function userby_email($email) {
+
+	$this->db->select('*');
+	$this->db->where('email',$email);
+	$query = $this->db->get($this->table);
+	$user = ($query->row());
+	
+	return $user;
+
+	}
 	
 	
 	
