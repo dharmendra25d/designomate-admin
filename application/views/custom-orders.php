@@ -22,7 +22,7 @@
 			   <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Orders List</h2>
+                    <h2>Custom Orders List</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -50,7 +50,6 @@
                           <tr class="headings">
                             <th class="column-title">Order ID </th>
 							<th class="column-title">Order Date </th>
-							<th class="column-title">Plan Name </th>
                             <th class="column-title">Customer Name </th>
                             <th class="column-title">Email </th>
 							<th class="column-title">Phone</th>
@@ -65,23 +64,17 @@
                         <tbody>
                          
 							<?php
-							foreach($list as $plan) { ?>
+							foreach($list as $order) { 
+							 $user = usersDetail($order->user_id);  ?>
 							 <tr class="even pointer">
-                            <td class=" "><?php echo $plan->id;?></td>
-							<td class=" "><?php echo $plan->order_date;?></td>
-							<?php if($plan->plan_id!=0) { ?>
-							<td class=" "><?php echo plansDetail($plan->plan_id)->plan_name; ?></td>
-							<?php } else {
-								$user_id= $plan->user_id; 
-								$plan_id= get_userPlan($user_id);
-							?>
-							<td class=" "><?php echo plansDetail($plan_id)->plan_name; ?></td>
-							<?php } ?>
-							<td class=" "><?php echo $plan->first_name;?> <?php echo $plan->last_name;?></td>
+                            <td class=" "><?php echo $order->id;?></td>
+							<td class=" "><?php echo $order->order_date;?></td>
+							
+							<td class=" "><?php echo $user->fname;?> <?php echo $user->lname;?></td>
 						
-							<td class=" "><?php echo $plan->email;?></td>
-							<td class=" "><?php echo $plan->phone;?></td>
-                           <td class="last"><a href="<?php echo base_url();?>orders/orderDetails?id=<?php echo $plan->id; ?>">View order</a>
+							<td class=" "><?php echo $user->email;?></td>
+							<td class=" "><?php echo $user->phone;?></td>
+                           <td class="last"><a href="<?php echo base_url();?>orders/queriesDetails?id=<?php echo $order->id; ?>">View order</a>
 							    </tr>
 							<?php }?>
                            

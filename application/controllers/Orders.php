@@ -31,15 +31,36 @@ class Orders extends CI_Controller {
 	
 	
 	
-	public function edit()
+	public function orderDetails()
 	{
-	 $this->load->model('Plans_M');
+	 $this->load->model('Orders_M');
 	 $id=$this->input->get('id');
-	 $plans=$this->Plans_M->single_plan($id);
-	 $d['details'] = $plans;
-	 $d['v'] = 'edit';
-	$this->load->view('template', $d);
-	} 
+	 $order=$this->Orders_M->single_order($id);
+	
+	 $d['details'] = $order;
+	 $d['v'] = 'order-details';
+	 $this->load->view('template', $d);
+	}
+	
+	public function queries()
+	{
+	 $this->load->model('Orders_M');
+	 $queries=$this->Orders_M->custom_order();
+	 $d['list'] = $queries;
+	 $d['v'] = 'custom-orders';
+	 $this->load->view('template', $d);
+	}
+	
+	public function queriesDetails()
+	{
+	 $this->load->model('Orders_M');
+	  $id=$this->input->get('id');
+	 $queries=$this->Orders_M->custom_order_details($id);
+	 $d['details'] = $queries;
+	 $d['v'] = 'order-custom-query';
+	 $this->load->view('template', $d);
+	}
+	
 	public function update()
 	{
 	 $this->load->model('Plans_M');

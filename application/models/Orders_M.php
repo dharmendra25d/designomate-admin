@@ -44,17 +44,35 @@ Class Orders_M extends CI_Model {
 
 	}
 	
-	public function single_plan($id) {
+	public function single_order($id) {
 
 	$this->db->select('*');
 	$this->db->where('id',$id);
 	$query = $this->db->get($this->table);
-	$plans = ($query->row());
+	$order = ($query->row());
 	
-	return $plans;
+	return $order;
+
+	}
+	public function custom_order() {
+
+	$this->db->select('*');
+	$query = $this->db->get('custom_design_queries');
+	$orders = ($query->result());
+	return $orders;
 
 	}
 	
+	public function custom_order_details($id) {
+
+	$this->db->select('*');
+	$this->db->where('id',$id);
+	$query = $this->db->get('custom_design_queries');
+	$order = ($query->row());
+	
+	return $order;
+
+	}
 	
 	
 	public function planUpdate($id,$info) {

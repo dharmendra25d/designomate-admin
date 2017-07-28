@@ -75,6 +75,13 @@
                       <li><a href="<?php echo base_url();?>addons/addons_list">Addons List</a></li>
                     </ul>
                   </li>
+				   <li><a href="<?php echo base_url();?>users"><i class="fa fa-user"></i>Customers</span></a>
+                   <li><a><i class="fa fa-list"></i>Orders</span><span class="fa fa-chevron-down"></span></a>
+                   <ul class="nav child_menu">
+				    <li><a href="<?php echo base_url();?>orders">Orders</a></li>
+                      <li><a href="<?php echo base_url();?>orders/queries">Custom Queries</a></li>
+                    </ul>
+				  </li>
                 </ul>
               </div>
             
