@@ -1,27 +1,70 @@
-<?php //include('header.php'); ?>
-<div class="topSpacingHeight"></div>
-<div class="BottomTopSpacing" id="login" style="margin-bottom:0;">
- <section class="title  m-top-0 bglogin">
- <div class="innerBG">
-  <div class="formsStore loginForm"><div class="innerFormLogin"><h1>Log in to your eCommerce store</h1>
-   <p>Log in  your Account!</p>
-   <div class="v_errors">
-   <?php echo validation_errors(); ?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Designomate Admin Panel</title>
+
+    <!-- Bootstrap -->
+    <link href="<?php echo base_url();?>/assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="<?php echo base_url();?>assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="<?php echo base_url();?>assets/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="<?php echo base_url();?>assets/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="<?php echo base_url();?>assets/build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+		<?php echo validation_errors(); ?>
   <?php echo $this->session->flashdata('login_error');?></div>
-   <form method="post" action="<?php echo base_url();?>login/auth" class="registerPage">
-    <label><input type="email" name="email" placeholder="Email" /></label>
-	<label><input type="text" name="password" placeholder="Password" /></label>
-	<a href="">Forget Password?</a>
-	<a href="<?php echo base_url();?>register">New User?</a>
-	 <input type="submit" name="submit" value="Log In" />
-   </form>
-   <div class="row rememberCl">
-    <div class="col-md-6 col-sm-6 col-xs-12"><label><input type="checkbox" />Remember me</label></div>
-	<div class="col-md-6 col-sm-6 col-xs-12"><a href="#" class="have">Have multiple stores?</a></div>
-   </div>
-  </div></div>
-  </div>
- </section>
- 
-</div>
-<?php //include('footer.php'); ?>
+          <section class="login_content">
+              <form method="post" action="<?php echo base_url();?>login/auth" class="registerPage">
+              <h1>Login Form</h1>
+              <div>
+                <input  type="email" name="email"  class="form-control" placeholder="Email" required="" />
+              </div>
+              <div>
+                <input type="password"  name="password"  class="form-control" placeholder="Password" required="" />
+              </div>
+              <div>
+			   <input class="btn btn-default submit" type="submit" name="submit" value="Log In" />
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+               
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-paw"></i>Designomate Admin Panel</h1>
+                  <p>©2016 All Rights Reserved. Designomate Admin Panel</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+		
+		
+		
+      </div>
+    </div>
+  </body>
+</html>
