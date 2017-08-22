@@ -119,6 +119,32 @@ Class Users_M extends CI_Model {
 	
 
 	}
+	
+	public function user_notification($user) {
+
+	foreach($user['users'] as $single) {
+		 $add_data['user'] =$single;
+		 $add_data['message'] =$user['message'];
+		$this->db->insert('users_notifications',$add_data);
+	}
+	
+	//
+	return true;
+
+	}
+	
+	public function notification_read($user) {
+			$add_data['status']=1;
+		   $this->db->where('id',$user['id']);
+		$this->db->update('users_notifications',$add_data);
+
+	//
+	return true;
+
+	}
+	
+	
+	
 	public function userby_email($email) {
 
 	$this->db->select('*');
