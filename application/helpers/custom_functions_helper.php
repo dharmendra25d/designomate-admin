@@ -67,3 +67,14 @@ function usersDetail($user_id) {
 return $user;
 
 }
+
+function usersDetailbyemail($email) {
+	$ci=& get_instance();
+	$ci->load->database(); 
+	$ci->db->select('*');
+	$ci->db->where('email',$email);
+	$query = $ci->db->get('dg_users');
+	$user = ($query->row());
+return $user;
+
+}

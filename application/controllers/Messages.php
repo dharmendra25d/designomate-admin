@@ -28,6 +28,21 @@ class Messages extends CI_Controller {
 		$this->load->view('template', $d);
 		
 	}
+	public function history()
+	{
+		$d['v'] = 'message-history';
+		 $this->load->model('Messages_M');
+		 $messages=$this->Messages_M->messages();
+		//redirect('plan-list');
+		 $d['messages'] = $messages;
+		 if($this->input->get('msg')) {
+		  $single_message=$this->Messages_M->single_message($this->input->get('msg'));
+		  $d['single_message'] = $single_message;
+		 } 
+		$this->load->view('template', $d);
+		
+	}
+	
 	public function send()
 	{
 	 $this->load->model('Users_M');		
@@ -43,41 +58,5 @@ class Messages extends CI_Controller {
 	 redirect('messages');
 	}
 	
-	
-	public function plans_list()
-	{
-	 $this->load->model('Plans_M');
-	 $plans=$this->Plans_M->plans_list();
-	//redirect('plan-list');
-	 $d['list'] = $plans;
-	 $d['v'] = 'plans-list';
-	$this->load->view('template', $d);
-	}
-	
-	
-	public function edit()
-	{
-	 $this->load->model('Plans_M');
-	 $id=$this->input->get('id');
-	 $plans=$this->Plans_M->single_plan($id);
-	 $d['details'] = $plans;
-	 $d['v'] = 'edit';
-	$this->load->view('template', $d);
-	} 
-	public function update()
-	{
-	 $this->load->model('Plans_M');
-	 $id=$this->input->get('id');
-	 $status=$this->Plans_M->planUpdate($id,$this->input->post());
-	redirect('plans/plans_list');
-	}
-	public function del()
-	{
-	 $this->load->model('Plans_M');
-	 $id=$this->input->get('id');
-	 $status=$this->Plans_M->planDel($id);
-	
-	redirect('plans/plans_list');
-	}
 	
 }
